@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 3000px;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #e9ecef;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    /* Pastikan sidebar tetap terfiksasi dan menggunakan flexbox untuk penataan */
+    display: flex;
+    flex-direction: column;
+    /* Menggunakan flexbox untuk memastikan sidebar berada di tengah secara vertikal */
+}
+
+.logo {
+    padding: 0 20px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.logo::before {
+    content: "📊";
+    margin-right: 8px;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.nav-link.active {
+    background-color: #16085f;
+    color: white;
+    font-weight: 500;
+    border-left: 3px solid #f0f0f0; /* Alternatif pengganti ::before */
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    opacity: 0.7;
+    color: #000;
+}
+
+.nav-badge {
+    margin-left: auto;
+    background-color: #ffc107;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px;
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: transparent;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-menu:hover {
+    background-color: #e9ecef;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+.user-name {
+    font-weight: 500;
+    color: #333;
+    margin-right: 8px;
+}
+
+.dropdown-icon {
+    color: #6c757d;
+}
+
+/* Content Area */
+.content {
+    padding: 30px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content-header {
+    margin-bottom: 30px;
+}
+
+.content-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.filter-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background-color: white;
+    color: #495057;
+}
+
+.filter-dropdown {
+    padding: 8px 35px 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    appearance: none;
+}
+
+/* Table Styles */
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    color: #000; /* Teks menjadi hitam */
+    font-weight: bold;
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f3f4;
+    color: black;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.pagination-info {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-btn {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    background-color: white;
+    color: #6c757d;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover {
+    background-color: #e9ecef;
+}
+
+.pagination-btn.active {
+    background-color: #4c63d2;
+    color: white;
+    border-color: #4c63d2;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 2000px;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .header {
+        padding: 15px 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .h1 {
+        margin-left: 20px;
+    }
+}
+
+.search-bar {
+    text-align: left;
+    margin-right: 42rem;
+    align-items: left;
+}
+.search-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.search-button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.search-button:hover {
+    background-color: #45a049;
+}
+
+.btn-add-employee {
+    text-align: right;
+    margin-left: 140px;
+}
+
+/* Tombol Edit */
+.btn-edit {
+    background-color: #389e0d; /* Warna hijau */
+    color: white; /* Warna teks putih */
+    padding: 8px 16px; /* Padding untuk ukuran tombol */
+    border: none; /* Menghapus border */
+    border-radius: 4px; /* Memberikan sudut yang melengkung */
+    cursor: pointer; /* Menunjukkan kursor pointer ketika hover */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Tombol Edit saat hover */
+.btn-edit:hover {
+    background-color: #389e0d; /* Warna hijau lebih gelap saat hover */
+}
+
+/* Tombol Delete */
+.btn-delete {
+    background-color: #f5222d; /* Warna merah */
+    color: white; /* Warna teks putih */
+    padding: 8px 16px; /* Padding untuk ukuran tombol */
+    border: none; /* Menghapus border */
+    border-radius: 4px; /* Memberikan sudut yang melengkung */
+    cursor: pointer; /* Menunjukkan kursor pointer ketika hover */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Tombol Delete saat hover */
+.btn-delete:hover {
+    background-color: #f5222d; /* Warna merah lebih gelap saat hover */
+}
+
+.btn-custom {
+    background-color: rgb(16, 4, 72);
+    border-color: rgb(16, 4, 72);
+    color: white; /* Untuk memastikan teks tetap terbaca */
+}
+.btn-custom:hover {
+    background-color: rgb(30, 10, 90);
+    border-color: rgb(30, 10, 90);
+}
+/* Menyembunyikan menu dropdown secara default */
+.nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    z-index: 100;
+}
+
+/* Menyembunyikan dropdown secara default */
+.nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    z-index: 100;
+}
+
+.has-submenu {
+    position: relative;
+}
+
+.has-submenu .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.has-submenu.open .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+    color: black; /* bisa kamu sesuaikan */
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    color: #ffffff;
+}
+
+.submenu-toggle-icon {
+    float: right;
+    font-size: 10px;
+    margin-left: auto;
+}

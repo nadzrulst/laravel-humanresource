@@ -1,0 +1,139 @@
+/* Import Font dari Google Fonts untuk tampilan yang lebih modern */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Styling untuk Filter Tanggal */
+.date-filter {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-item label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.filter-item input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-item input[type="date"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Wrapper untuk tabel agar bisa di-scroll horizontal di layar kecil */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menghilangkan jarak antar border */
+    text-align: left;
+}
+
+thead th {
+    background-color: #A663CC;
+    color: #ffffff;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* Memberi radius pada sudut header tabel */
+thead th:first-child {
+    border-top-left-radius: 8px;
+}
+thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5; /* Warna latar saat hover */
+}
+
+td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Styling untuk tombol aksi */
+.actions button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.actions button:hover {
+    transform: scale(1.05); /* Sedikit membesar saat hover */
+    filter: brightness(1.1);
+}
+
+.btn-edit {
+    background-color: #3498db; /* Biru */
+}
+
+.btn-delete {
+    background-color: #e74c3c; /* Merah */
+}
+
+body.body.index {
+  height: 100%;
+  padding: 0 !important; /* Hapus padding global yang mengganggu */
+}

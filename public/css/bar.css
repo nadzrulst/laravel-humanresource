@@ -1,0 +1,153 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f4ef;
+}
+
+.section {
+  display: flex;
+  min-height: 100vh;
+  height: 100vh; /* Ganti min-height ke height */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #fff;
+  border-right: 2px solid #e5e7eb;
+  width: 50px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar-nav {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.sidebar-item {
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-item i {
+  margin-right: 10px;
+}
+
+.sidebar-item:hover {
+  background-color: #6f2dbd;
+  color: #f3e8ff;
+}
+
+.sidebar-item.active {
+  background-color: #6f2dbd;
+  color: #ffff;
+
+}
+
+.sidebar .sidebar-item-name {
+  display: none;
+}
+
+.sidebar.expanded .sidebar-item-name {
+  display: inline-block;
+}
+
+/* Top navbar */
+.top-navbar {
+  background-color: #6f2dbd;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.top-navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Fix flexbox overflow */
+}
+
+/* Main content area */
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  padding-left: 20px;
+  min-height: 100vh;
+}
+
+.content-header {
+    padding: 30px 30px 0;
+  flex-shrink: 0; /* Prevent header from growing */
+
+}
+
+.main-content-body {
+  
+  overflow: auto; 
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  margin: 20px;
+  border-radius: 8px 0 0 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* User controls (minimal styling added) */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #3f2dbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
